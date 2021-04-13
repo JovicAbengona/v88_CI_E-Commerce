@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url() ?>static/cart.css">
-    <title>PHP | Students</title>
+    <title>PHP | E-Commerce</title>
 </head>
 <body>
     <header>
@@ -42,6 +43,7 @@
                 <tr>
                     <td colspan=2>Total</td>
                     <td>Php <?= $total ?></td>
+                    <td><a href="checkout">Proceed to Checkout</a></td>
                 </tr>
 <?php   }
         else{
@@ -53,7 +55,7 @@
 ?>
             </tbody>
         </table>
-        
-    </section>
+<?php if($this->session->userdata("delete_success") != NULL){ echo "<p class='error'>".$this->session->userdata("delete_success")."</p"; $this->session->unset_userdata("delete_success");}?>
+</section>
 </body>
 </html>

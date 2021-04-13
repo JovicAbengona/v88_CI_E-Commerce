@@ -26,7 +26,7 @@ header a{
 }
 
 section{
-    padding: 0px 80px;
+    padding: 10px 80px;
 }
 
 section table{
@@ -42,7 +42,7 @@ section table th, section table td{
     padding: 15px;
 }
 
-section table tbody tr:nth-last-child(2) td:not(:last-child){
+section table tbody tr:nth-last-child(2) td{
     border-bottom: 3px solid #ced4da;
 }
 
@@ -61,26 +61,64 @@ section table tbody tr td form button:hover{
 
 section table tbody tr td form button{
     background-color: #e63946;
-    border-radius: 4px;
     padding: 5px 15px;
     color: white;
     border: none;
 }
 
-section table tbody tr td a{
-    background-color: #2a9d8f;
-    text-decoration: none;
-    border-radius: 4px;
-    padding: 5px 15px;
-    color: white;
+section > h3{
+    margin-top: 15px;
 }
 
-section p{
+section > form{
+    margin-top: 15px;
+    padding-bottom: 26px;
+    width: 30%;
+}
+
+section > form > label{
+    margin-bottom: 20px;
+    display: block;
+}
+
+section > form > label > input{
+    border: 1px solid black;
+    border-radius: 3px;
+    float: right;
+    padding: 5px;
+    width: 50%;
+}
+
+section > form > p{
+    margin-bottom: 10px;
     font-style: italic;
-    margin-left: 12px;
+    text-align: right;
+    color: #e76f51;
+    font-size: 14px;
+}
+
+section > form > button:hover{
+    cursor: pointer;
+}
+
+section > form > button{
+    background-color: #2a9d8f;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: white;
+    border: none;
+    float: right;
+}
+
+section .success{
+    font-style: italic;
+    color: #2a9d8f;
     font-size: 14px;
 }
 
 section .error{
+    margin-bottom: 15px;
+    font-style: italic;
     color: #e76f51;
+    font-size: 14px;
 }

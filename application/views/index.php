@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url() ?>static/index.css">
-    <title>PHP | Products</title>
+    <title>PHP | E-Commerce</title>
 </head>
 <body>
     <header>
@@ -46,7 +46,9 @@
 ?>
             </tbody>
         </table>
-<?php if($this->session->userdata("error") != NULL){ echo $this->session->userdata("error"); $this->session->unset_userdata("error");}?>
+<?php if($this->session->userdata("error") != NULL){ echo "<p class='error'>".$this->session->userdata("error")."</p"; $this->session->unset_userdata("error");}?>
+<?php if($this->session->userdata("buy_success") != NULL){ echo "<p class='success'>".$this->session->userdata("buy_success")."</p"; $this->session->unset_userdata("buy_success");}?>
+<?php if($this->session->userdata("checkout_success") != NULL){ echo "<p class='success'>".$this->session->userdata("checkout_success")."</p"; $this->session->unset_userdata("checkout_success");}?>
     </section>
 </body>
 </html>

@@ -62,6 +62,13 @@ section table tbody tr td form button{
 section p{
     font-style: italic;
     margin-left: 12px;
-    color: #e76f51;
     font-size: 14px;
+}
+
+section .success{
+    color: #2a9d8f;
+}
+
+section .error{
+    color: #e76f51;
 }

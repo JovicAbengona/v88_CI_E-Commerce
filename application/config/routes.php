@@ -53,5 +53,7 @@ $route['default_controller'] = 'products';
 $route['buy/(:any)'] = 'products/buy/$1';
 $route['delete/(:any)'] = 'products/delete/$1';
 $route['cart'] = 'products/cart';
+$route['checkout'] = 'products/checkout';
+$route['processCheckout'] = 'products/processCheckout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

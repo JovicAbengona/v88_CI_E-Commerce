@@ -1,6 +1,6 @@
 <?php
     class Product extends CI_Model{
-        function checkCart(){
+        public function checkCart(){
             $this->db->select("*");
             $this->db->from("carts");
             $query = $this->db->get();
@@ -19,7 +19,7 @@
             }
         }
 
-        function countCart($cart_id){
+        public function countCart($cart_id){
             $this->db->select("COUNT(*) AS cartQuantity");
             $this->db->from("cart_details");
             $this->db->where("cart_id", $cart_id);
@@ -29,10 +29,11 @@
             return $query->row_array();
         }
 
-        function addToCart($form_data){
+        public function addToCart($form_data){
             $this->db->select("*");
             $this->db->from("cart_details");
             $this->db->where("product_id", $form_data["product_id"]);
+            $this->db->where("status", NULL);
             $query = $this->db->get();
 
             if($query->row_array() != NULL){ // Update cart if product_id already exists
@@ -58,13 +59,13 @@
             }
         }
 
-        function deleteItem($id){
+        public function deleteItem($id){
             $this->db->where("id", $id);
             return $this->db->delete("cart_details");        
         }
 
-        function getCartItems($cart_id){
-            $this->db->select("cart_details.id, cart_details.quantity, products.name, products.price");
+        public function getCartItems($cart_id){
+            $this->db->select("cart_details.id, cart_details.cart_id,cart_details.quantity, products.name, products.price");
             $this->db->from("cart_details");
             $this->db->join("products", "products.id = cart_details.product_id");
             $this->db->where("cart_details.cart_id", $cart_id);
@@ -74,12 +75,24 @@
             return $query->result_array();
         }
 
-        function getProducts(){
+        public function getProducts(){
             $this->db->select("*");
             $this->db->from("products");
             $query = $this->db->get();
 
             return $query->result_array();
+        }
+
+        public function processCheckout($checkout_data){
+            $data = array(
+                "status" => "bought",
+                "updated_at" => date("Y-m-d, H:i:s")
+            );
+
+            $this->db->where("cart_id", $checkout_data["cart_id"]);
+            $this->db->update("cart_details", $data); 
+
+            return $this->db->insert("billing", $checkout_data);
         }
     }
 ?>
