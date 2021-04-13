@@ -1,0 +1,67 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    padding: 20px 80px 60px 80px;
+}
+
+header h1{
+    float: left;
+}
+
+header a{
+    border: 1px solid #2a9d8f;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 5px 15px;
+    color: #2a9d8f;
+    margin-top: 5px;
+    float: right;
+}
+
+section{
+    padding: 40px 80px;
+}
+
+section table{
+    border-collapse: collapse;
+    margin-top: 15px;    
+}
+
+section table thead tr{
+    text-align: left;
+}
+
+section table th, section table td{
+    padding: 15px;
+}
+
+section table tbody tr td form input{
+    margin-right: 15px;
+    padding: 5px;
+    width: 20%;
+}
+
+section table tbody tr td form button:hover{
+    cursor: pointer;
+}
+
+section table tbody tr td form button{
+    background-color: #2a9d8f;
+    padding: 5px 15px;
+    color: white;
+    border: none;
+}
+
+section p{
+    font-style: italic;
+    margin-left: 12px;
+    color: #e76f51;
+    font-size: 14px;
+}
