@@ -33,7 +33,7 @@
             $this->db->select("*");
             $this->db->from("cart_details");
             $this->db->where("product_id", $form_data["product_id"]);
-            $this->db->where("status", NULL);
+            $this->db->where("status", "added");
             $query = $this->db->get();
 
             if($query->row_array() != NULL){ // Update cart if product_id already exists

@@ -33,7 +33,10 @@
                     <td>Php <?= $product["name"] ?></td>
                     <td>Php <?= $product["price"] ?></td>
                     <td>
-                        <form action="delete/<?= $product["id"] ?>" method="POST">
+<?php   $attributes = array("role" => "form");
+        echo form_open("delete/".$product["id"], $attributes);
+?>
+                        <!-- <form action="delete/<?= $product["id"] ?>" method="POST"> -->
                             <button type="submit">Delete</button>
                         </form>
                     </td>

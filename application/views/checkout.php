@@ -52,7 +52,10 @@
             </tbody>
         </table>
         <h3>Billing Info</h3>
-        <form action="processCheckout/<?php $cart_data ?>" method="POST">
+<?php   $attributes = array("role" => "form");
+        echo form_open("processCheckout", $attributes);
+?>
+        <!-- <form action="processCheckout" method="POST"> -->
             <label>Name: <input type="text" name="name"></label>
 <?php if($this->session->userdata("checkout_error_name") != NULL){ echo $this->session->userdata("checkout_error_name"); $this->session->unset_userdata("checkout_error_name");}?>
             <label>Address: <input type="text" name="address"></label>

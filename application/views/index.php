@@ -29,7 +29,10 @@
                     <td><?= $product["name"] ?></td>
                     <td>Php <?= $product["price"] ?></td>
                     <td>
-                        <form action="buy/<?= $product["id"] ?>" method="POST">
+<?php   $attributes = array("role" => "form");
+        echo form_open("buy/".$product["id"], $attributes);
+?>
+                        <!-- <form action="buy/" method="POST"> -->
                             <input type="number" name="quantity" min="1" value="1">
                             <button type="submit">Buy</button>
                         </form>
